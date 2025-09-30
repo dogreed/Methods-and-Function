@@ -1,55 +1,64 @@
-﻿using System.Diagnostics;
-using System.Globalization;
-using System.Reflection.Metadata.Ecma335;
-
-namespace he
+﻿namespace primenumber
 {
-	class Look
+	class Prime
 	{
 
-		// calcualtor usinmg methods, lets check the prime number
-
-		static void primenumberchecker(int num)
+		private static bool PrimeChecker(int usernumber)
 		{
-			bool isprimenumber = true;
-			if (num <= 1)
+			bool isPrime = true;
+			if (usernumber <= 1)
 			{
-				isprimenumber = false;
+				return isPrime = false;
+
 			}
 			else
 			{
-
-				for (int i = 2; i <= num / 2; i++)
+				for (int i = 2; i <= usernumber / 2; i++)
 				{
-
-					if (num % i == 0)
+					if (usernumber % i == 0)
 					{
-						isprimenumber = false;
+						return isPrime = false;
 						break;
 					}
 
 				}
+
 			}
-			if (isprimenumber)
+
+			if (isPrime)
 			{
-				Console.WriteLine("its a prime number " + num);
+				return isPrime = true;
 			}
 			else
 			{
-				Console.WriteLine("its not a prime number" + num);
+				
+				Console.WriteLine("its not a prime number " + usernumber);
 			}
+
+			return isPrime;
 		}
-		
 
-		public static void Main(string[] args)
+		static int factorialnuber(int n)
 		{
+			int result = 1;
+			for (int i = 1; i <= n; i++)
+			{
 
-			Console.WriteLine("Prime Number Checker");
-			Console.WriteLine("Enter a number:");
-			int num1 = Convert.ToInt32(Console.ReadLine());
-			Console.WriteLine("ayoooo");
-			primenumberchecker(num1);
+				result = result * i;
+			}
+			return result;
+		}
+
+		public static void Main(String[] args)
+		{
+			//  so now we try to findl prime number
+			Console.Write("Enter the number u wnt fing the factorial : ");
+			int usernumber = Convert.ToInt32(Console.ReadLine());
+
+
+			Console.WriteLine("The factorial number is " + factorialnuber(usernumber) ); 
+			
+		
 		}
 	}
-
 }
